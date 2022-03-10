@@ -9,7 +9,7 @@ contract MemeCoin is ERC20, Ownable, ERC20Burnable { // lines 8 through 10, we s
     event tokensMinted(address indexed owner, uint256 amount, string message);
     event additionalTokensMinted(address indexed owner,uint256 amount,string message);
 
-    constructor() ERC20("FoxCoin", "FXC") {//we're calling our ERC20 constructor which requires the name of our token and its ticker symbol as its parameters.
+    constructor() ERC20("YerCoin", "YER") {//we're calling our ERC20 constructor which requires the name of our token and its ticker symbol as its parameters.
         _mint(msg.sender, 1000 * 10**decimals()); //pulling the _mint function from the ERC20 library which lets us mint our token and transfer it to ourselves via msg.sender.
         //In this case we're minting 1000 tokens but notice that we are using decimal() . This function allows us to create fractional amounts of our currency, in this case 18 decimal places just like wei. decimal() actually just returns the number 18, you can see that here. Alternatively, we could have just written  1000 * 10**18 but why not get a little fancy 🙂 Then finally we set up an emitter to log our action to the blockchain.
         emit tokensMinted(msg.sender, 1000 * 10**decimals(), "Initial supply of tokens minted.");
